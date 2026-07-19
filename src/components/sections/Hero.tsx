@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import {
   motion,
@@ -100,13 +99,15 @@ export function Hero() {
             premium, results-driven websites.
           </p>
           <div className="mt-7">
-            <Link
-              href="/#contact"
+            <a
+              href={site.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group font-mono inline-flex h-12 items-center gap-2 bg-accent px-7 text-xs font-medium uppercase tracking-[0.18em] text-paper"
             >
               <TextRoll>Book a call</TextRoll>
               <ArrowUpRight className="h-4 w-4" strokeWidth={1.75} />
-            </Link>
+            </a>
           </div>
         </motion.div>
 

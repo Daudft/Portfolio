@@ -5,7 +5,7 @@ import { projects } from "@/lib/projects";
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url.replace(/\/$/, "");
 
-  const staticRoutes = ["", "/projects"].map((path) => ({
+  const staticRoutes = ["", "/projects", "/contact"].map((path) => ({
     url: `${base}${path}`,
     changeFrequency: "monthly" as const,
     priority: path === "" ? 1 : 0.8,

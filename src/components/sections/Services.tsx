@@ -140,7 +140,7 @@ function Card({
               ))}
             </ul>
             <Link
-              href="/#contact"
+              href="/contact"
               className="link-underline inline-flex items-center gap-1.5 text-sm"
             >
               Start a project

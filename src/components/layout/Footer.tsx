@@ -4,10 +4,7 @@ export function Footer() {
   const year = "2026"; // update yearly, or wire to a build-time constant
 
   return (
-    <footer
-      id="contact"
-      className="relative flex min-h-svh scroll-mt-24 flex-col pt-20"
-    >
+    <footer className="relative flex min-h-svh flex-col pt-20">
       {/* Big "let's work together" call to action — fills the middle */}
       <div className="container-x flex flex-1 flex-col justify-center py-12">
         <p className="eyebrow mb-6">Have a project in mind?</p>

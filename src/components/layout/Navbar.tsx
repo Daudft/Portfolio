@@ -73,7 +73,7 @@ export function Navbar() {
               </span>
             )}
             <Link
-              href="/#contact"
+              href="/contact"
               className="group bg-ink px-5 py-2.5 text-sm font-medium text-paper"
             >
               <TextRoll>Let&rsquo;s talk</TextRoll>

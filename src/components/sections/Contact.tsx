@@ -5,10 +5,7 @@ import { ContactForm } from "@/components/ui/ContactForm";
 
 export function Contact() {
   return (
-    <section
-      id="contact"
-      className="scroll-mt-24 border-t border-line py-[var(--spacing-section)]"
-    >
+    <section className="pt-36 pb-[var(--spacing-section)] md:pt-44">
       <div className="container-x grid grid-cols-1 gap-16 lg:grid-cols-12">
         {/* Left column — invitation + details */}
         <div className="lg:col-span-5">
@@ -16,10 +13,10 @@ export function Contact() {
             <p className="eyebrow mb-4">Contact</p>
           </Reveal>
           <AnimatedHeading
-            as="h2"
+            as="h1"
             segments={[
-              { text: "Let's build" },
-              { text: "something great.", className: "font-display italic text-accent" },
+              { text: "Let's make something" },
+              { text: "worth remembering.", className: "font-display italic text-accent" },
             ]}
             className="font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl"
           />
@@ -39,6 +36,17 @@ export function Contact() {
                   className="link-underline text-lg text-ink"
                 >
                   {site.email}
+                </a>
+              </div>
+              <div>
+                <p className="eyebrow mb-1">Book a call</p>
+                <a
+                  href={site.bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-underline text-lg text-ink"
+                >
+                  Pick a time on my calendar
                 </a>
               </div>
               <div>

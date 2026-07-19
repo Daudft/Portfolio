@@ -3,8 +3,6 @@ import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
 import SmoothScroll from "@/components/layout/SmoothScroll";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
 import { PreloaderProvider } from "@/components/ui/Preloader";
 
 const sans = Geist({
@@ -85,17 +83,7 @@ export default function RootLayout({
     >
       <body suppressHydrationWarning>
         <PreloaderProvider>
-          <SmoothScroll>
-            <a
-              href="#work"
-              className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-200 focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-paper"
-            >
-              Skip to content
-            </a>
-            <Navbar />
-            <main>{children}</main>
-            <Footer />
-          </SmoothScroll>
+          <SmoothScroll>{children}</SmoothScroll>
         </PreloaderProvider>
       </body>
     </html>

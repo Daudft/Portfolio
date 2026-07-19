@@ -12,15 +12,24 @@ export const site = {
   email: "devdaud6@gmail.com",
   // Used to build absolute URLs (sitemap, Open Graph). Reads NEXT_PUBLIC_SITE_URL
   // when set (see .env.example), otherwise falls back to this default.
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://daudafzal.dev",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://daudafzal.tech",
 
   // Availability banner in the nav / footer
   availableForWork: true,
   availabilityLabel: "Available for select projects — 2026",
 
+  // Scheduling link for "Book a call" — create a free account at cal.com,
+  // connect Zoom under Apps so booked calls get a Zoom meeting automatically,
+  // then replace this with your event link (e.g. https://cal.com/your-name/intro).
+  bookingUrl: "https://cal.com/sardar-daud-lmw2qq/30min",
+
   socials: [
-    { label: "LinkedIn", href: "https://linkedin.com/in/", handle: "in/you" },
-    { label: "GitHub", href: "https://github.com/", handle: "@you" },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/daud-afzal/",
+      handle: "in/daud-afzal",
+    },
+    { label: "GitHub", href: "https://github.com/Daudft", handle: "@Daudft" },
   ],
 
   // Primary navigation
@@ -29,7 +38,7 @@ export const site = {
     { label: "About", href: "/#about" },
     { label: "Services", href: "/#services" },
     { label: "Process", href: "/#process" },
-    { label: "Contact", href: "/#contact" },
+    { label: "Contact", href: "/contact" },
   ],
 } as const;
 
