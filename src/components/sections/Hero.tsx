@@ -48,9 +48,7 @@ export function Hero() {
       style={reduce ? undefined : { scale: coverScale, opacity: coverOpacity }}
       className="sticky top-0 z-0 flex min-h-svh flex-col overflow-hidden"
     >
-      {/* ---- Heading behind the portrait ---------------------------------- */}
-      {/* ---- Monochrome photo panel, centred ------------------------------ */}
-      <div className="pointer-events-none absolute left-1/2 top-[48%] z-10 w-[min(56vw,17rem)] -translate-x-1/2 -translate-y-1/2 sm:w-76">
+      <div className="pointer-events-none absolute left-1/2 top-[40%] z-10 w-[min(72vw,13rem)] -translate-x-1/2 -translate-y-1/2 sm:top-[46%] sm:w-[min(56vw,17rem)] sm:w-76 md:hidden">
         <motion.div
           initial={reduce ? false : { opacity: 0, y: 48, scale: 0.96 }}
           animate={
@@ -67,7 +65,7 @@ export function Hero() {
               alt={`Portrait of ${site.name}`}
               fill
               priority
-              sizes="(max-width: 640px) 56vw, 19rem"
+              sizes="(max-width: 640px) 72vw, 13rem"
               className="object-cover object-top grayscale contrast-[1.05]"
               onError={() => setHasPhoto(false)}
             />
@@ -79,14 +77,42 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* ---- Bottom corners ------------------------------------------------ */}
-      <div className="container-x relative z-20 mt-auto grid grid-cols-1 items-end gap-8 pb-16 md:grid-cols-2 md:pb-20">
-        {/* Left: pitch + CTA */}
+      <div className="pointer-events-none absolute left-1/2 top-[48%] z-10 hidden w-[min(56vw,17rem)] -translate-x-1/2 -translate-y-1/2 sm:w-76 md:block">
+        <motion.div
+          initial={reduce ? false : { opacity: 0, y: 48, scale: 0.96 }}
+          animate={
+            ready
+              ? { opacity: 1, y: 0, scale: 1 }
+              : { opacity: 0, y: 48, scale: 0.96 }
+          }
+          transition={{ duration: 1.15, ease: EASE, delay: 0.55 }}
+          className="relative aspect-4/5 overflow-hidden rounded-xl bg-paper-2 shadow-[0_30px_70px_-30px_rgba(20,19,16,0.35)]"
+        >
+          {hasPhoto ? (
+            <Image
+              src={PORTRAIT_SRC}
+              alt={`Portrait of ${site.name}`}
+              fill
+              priority
+              sizes="(max-width: 640px) 72vw, 13rem"
+              className="object-cover object-top grayscale contrast-[1.05]"
+              onError={() => setHasPhoto(false)}
+            />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center">
+              <span className="font-display text-8xl text-accent/25">DA</span>
+            </div>
+          )}
+        </motion.div>
+      </div>
+
+      <div className="container-x relative z-20 mt-auto flex flex-col gap-8 pb-12 pt-8 sm:pb-16 md:grid md:grid-cols-2 md:items-end md:pb-20 md:pt-0">
         <motion.div
           custom={0}
           variants={fadeUp}
           initial={reduce ? false : "hidden"}
           animate={ready ? "show" : "hidden"}
+          className="max-w-full sm:max-w-[28rem]"
         >
           <h1 className="font-display text-4xl leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.4rem]">
             Turn clicks
@@ -94,7 +120,7 @@ export function Hero() {
             into <span className="italic">clients</span>
             <span className="text-accent">.</span>
           </h1>
-          <p className="mt-5 max-w-72 leading-relaxed text-ink-soft">
+          <p className="mt-5 max-w-full leading-relaxed text-ink-soft sm:max-w-72">
             I help growing brands and startups gain an unfair advantage through
             premium, results-driven websites.
           </p>
@@ -103,7 +129,7 @@ export function Hero() {
               href={site.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group font-mono inline-flex h-12 items-center gap-2 bg-accent px-7 text-xs font-medium uppercase tracking-[0.18em] text-paper"
+              className="group inline-flex h-12 w-full items-center justify-center gap-2 bg-accent px-7 font-mono text-xs font-medium uppercase tracking-[0.18em] text-paper sm:w-auto sm:justify-start"
             >
               <TextRoll>Book a call</TextRoll>
               <ArrowUpRight className="h-4 w-4" strokeWidth={1.75} />
@@ -111,7 +137,6 @@ export function Hero() {
           </div>
         </motion.div>
 
-        {/* Right: one quiet review line (sample — swap in a real quote) */}
         <motion.figure
           custom={1}
           variants={fadeUp}

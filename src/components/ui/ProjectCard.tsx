@@ -66,7 +66,7 @@ export function ProjectCard({
 
         {/* Meta */}
         <div className="mt-5 flex items-baseline justify-between gap-4">
-          <h3 className="font-display text-2xl tracking-tight transition-colors group-hover:text-muted">
+          <h3 className="font-display text-xl tracking-tight transition-colors group-hover:text-muted sm:text-2xl">
             {project.title}
           </h3>
           <span className="shrink-0 text-sm text-muted">{project.year}</span>

@@ -18,7 +18,7 @@ export function FeaturedWork() {
           <AnimatedHeading
             as="h2"
             text="Recent projects"
-            className="font-display text-5xl tracking-tight sm:text-6xl"
+            className="font-display text-4xl tracking-tight sm:text-5xl lg:text-6xl"
           />
         </div>
         <Reveal delay={0.1}>
@@ -31,7 +31,7 @@ export function FeaturedWork() {
         </Reveal>
       </div>
 
-      <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2">
+      <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-12 sm:mt-16 sm:gap-y-16 md:grid-cols-2">
         {featuredProjects.map((project, i) => (
           <div key={project.slug} className={i % 2 === 1 ? "md:mt-24" : ""}>
             <ProjectCard project={project} index={i} priority={i === 0} />
