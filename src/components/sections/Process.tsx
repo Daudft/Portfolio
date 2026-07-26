@@ -140,7 +140,7 @@ export function Process() {
 
         {/* The blinds */}
         <Reveal delay={0.1}>
-          <div className="flex h-[76svh] flex-col gap-3 lg:h-[72svh]">
+          <div className="flex flex-col gap-3 md:h-[76svh] md:flex-col lg:h-[72svh]">
             {steps.map((step, i) => {
               const isActive = active === i;
               return (
@@ -160,6 +160,7 @@ export function Process() {
                   )}
                   style={{
                     flex: isActive ? 3.4 : 1,
+                    minHeight: isActive ? "20rem" : "4.25rem",
                     transition:
                       "flex 0.8s cubic-bezier(0.16,1,0.3,1), background-color 0.5s, border-color 0.5s, color 0.5s",
                   }}
@@ -181,7 +182,7 @@ export function Process() {
                       isActive ? "opacity-0" : "opacity-100 delay-150",
                     )}
                   >
-                    <span className="font-display whitespace-nowrap text-2xl tracking-tight">
+                    <span className="font-display whitespace-nowrap text-xl tracking-tight sm:text-2xl">
                       {step.title}
                     </span>
                   </div>
@@ -195,10 +196,10 @@ export function Process() {
                         : "pointer-events-none opacity-0",
                     )}
                   >
-                    <h3 className="font-display text-3xl tracking-tight sm:text-4xl">
+                    <h3 className="font-display text-2xl tracking-tight sm:text-4xl">
                       {step.title}
                     </h3>
-                    <p className="mt-3 max-w-md leading-relaxed text-paper/85">
+                    <p className="mt-3 max-w-md text-sm leading-relaxed text-paper/85 sm:text-base">
                       {step.blurb}
                     </p>
                     <ul className="mt-5 flex flex-wrap gap-2">
