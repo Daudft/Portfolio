@@ -48,7 +48,7 @@ export function Hero() {
       style={reduce ? undefined : { scale: coverScale, opacity: coverOpacity }}
       className="sticky top-0 z-0 flex min-h-svh flex-col overflow-hidden"
     >
-      <div className="pointer-events-none absolute left-1/2 top-[58%] z-10 w-[min(72vw,13rem)] -translate-x-1/2 -translate-y-1/2 sm:top-[46%] sm:w-[min(56vw,17rem)] sm:w-76 md:hidden">
+      <div className="pointer-events-none absolute left-1/2 top-[66%] z-10 w-[min(72vw,13rem)] -translate-x-1/2 -translate-y-1/2 sm:top-[46%] sm:w-[min(56vw,17rem)] sm:w-76 md:hidden">
         <motion.div
           initial={reduce ? false : { opacity: 0, y: 48, scale: 0.96 }}
           animate={
@@ -106,7 +106,7 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <div className="container-x relative z-20 mt-auto flex flex-col gap-8 pb-12 pt-24 sm:pb-16 sm:pt-20 md:grid md:grid-cols-2 md:items-end md:pb-20 md:pt-0">
+      <div className="container-x relative z-20 mt-auto flex flex-col gap-8 pb-12 pt-28 sm:pb-16 sm:pt-20 md:grid md:grid-cols-2 md:items-end md:pb-20 md:pt-0">
         <motion.div
           custom={0}
           variants={fadeUp}
@@ -114,7 +114,7 @@ export function Hero() {
           animate={ready ? "show" : "hidden"}
           className="max-w-full sm:max-w-[28rem]"
         >
-          <h1 className="font-display text-3.5rem leading-[1.02] tracking-tight sm:text-5xl lg:text-[3.4rem]">
+          <h1 className="font-display text-[2.5rem] leading-[1.02] tracking-tight sm:text-5xl lg:text-[3.4rem]">
             Turn clicks
             <br />
             into <span className="italic">clients</span>

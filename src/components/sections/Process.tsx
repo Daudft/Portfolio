@@ -168,7 +168,7 @@ export function Process() {
                   {/* Step number — always pinned top-left */}
                   <span
                     className={cn(
-                      "absolute left-5 top-5 font-mono text-sm transition-colors duration-500",
+                      "absolute left-5 top-5 font-mono text-sm transition-colors duration-500 sm:left-6 sm:top-6",
                       isActive ? "text-paper/80" : "text-accent",
                     )}
                   >
@@ -182,7 +182,7 @@ export function Process() {
                       isActive ? "opacity-0" : "opacity-100 delay-150",
                     )}
                   >
-                    <span className="font-display whitespace-nowrap text-xl tracking-tight sm:text-2xl">
+                    <span className="font-display ml-2 whitespace-nowrap text-xl tracking-tight sm:ml-0 sm:text-2xl">
                       {step.title}
                     </span>
                   </div>
